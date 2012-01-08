@@ -1,11 +1,11 @@
 {
   "name": "multipass",
   "description": "Encode and decode Tender Multipass tokens",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "David Wood <bitprobe@gmail.com>",
   "repository": {
       "type": "git",
-      "url": "http://github.com/davidwood/node-multipass.js" 
+      "url": "http://github.com/davidwood/node-multipass" 
   },
   "devDependencies": {
     "mocha": "*",
