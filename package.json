@@ -1,7 +1,7 @@
 {
   "name": "multipass",
   "description": "Encode and decode Tender Multipass tokens",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "author": "David Wood <bitprobe@gmail.com>",
   "repository": {
       "type": "git",
