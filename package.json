@@ -5,7 +5,7 @@
   "author": "David Wood <bitprobe@gmail.com>",
   "repository": {
       "type": "git",
-      "url": "http://github.com/davidwood/node-multipass.js" 
+      "url": "http://github.com/davidwood/node-multipass" 
   },
   "devDependencies": {
     "mocha": "*",
