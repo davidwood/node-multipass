@@ -1,4 +1,4 @@
-var should = require('should'),
+var assert = require('assert'),
     Multipass = require('../lib/multipass.js');
 
 var OBJ = { email: 'test@example.com', name: 'test', expires: '2011-07-06 23:28:40Z' },
@@ -12,8 +12,8 @@ describe('multipass', function() {
       try {
         var multipass = new Multipass();
       } catch (e) {
-        should.exist(e);
-        e.message.should.eql('Invalid API key');
+        assert.ok(e instanceof Error);
+        assert.equal(e.message, 'Invalid API key');
       }
     });
 
@@ -21,8 +21,8 @@ describe('multipass', function() {
       try {
         var multipass = new Multipass('');
       } catch (e) {
-        should.exist(e);
-        e.message.should.eql('Invalid API key');
+        assert.ok(e instanceof Error);
+        assert.equal(e.message, 'Invalid API key');
       }
     });
 
@@ -30,8 +30,8 @@ describe('multipass', function() {
       try {
         var multipass = new Multipass('API-KEY');
       } catch (e) {
-        should.exist(e);
-        e.message.should.eql('Invalid site key');
+        assert.ok(e instanceof Error);
+        assert.equal(e.message, 'Invalid site key');
       }
     });
 
@@ -39,8 +39,8 @@ describe('multipass', function() {
       try {
         var multipass = new Multipass('API-KEY', '');
       } catch (e) {
-        should.exist(e);
-        e.message.should.eql('Invalid site key');
+        assert.ok(e instanceof Error);
+        assert.equal(e.message, 'Invalid site key');
       }
     });
 
@@ -50,13 +50,11 @@ describe('multipass', function() {
     var multipass = new Multipass('API-KEY', 'SITE-KEY');
   
     it('should expose an `encode` function', function() {
-      should.exist(multipass.encode);
-      (typeof multipass.encode).should.eql('function');
+      assert.equal(typeof multipass.encode, 'function');
     });
 
     it('should expose a `decode` function', function() {
-      should.exist(multipass.decode);
-      (typeof multipass.decode).should.eql('function');
+      assert.equal(typeof multipass.decode, 'function');
     });
 
   });
@@ -66,12 +64,12 @@ describe('multipass', function() {
   
     it('should return undefined if object not passed', function() {
       var token = multipass.encode();
-      should.not.exist(token);
+      assert.equal(token, void 0);
     });
 
     it('should return a valid Multipass token', function() {
       var token = multipass.encode(OBJ);
-      token.should.eql(TOKEN);
+      assert.equal(token, TOKEN);
     });
 
   });
@@ -81,12 +79,12 @@ describe('multipass', function() {
   
     it('should return undefined if token not passed', function() {
       var obj = multipass.decode();
-      should.not.exist(obj);
+      assert.equal(obj, void 0);
     });
 
     it('should return a valid Multipass token', function() {
       var obj = multipass.decode(TOKEN);
-      obj.should.eql(OBJ);
+      assert.deepEqual(obj, OBJ);
     });
 
   });
