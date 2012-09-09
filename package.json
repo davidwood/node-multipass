@@ -13,5 +13,8 @@
   },
   "keywords": ["sso", "tender", "multipass"],
   "main": "./lib/multipass",
+  "scripts": {
+    "test": "make test"
+  },
   "engines": { "node": ">= 0.4.0" }
 }
