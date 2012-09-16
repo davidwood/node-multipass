@@ -1,4 +1,4 @@
-# Encode and decode Tender Multipass tokens
+# node-multipass [![Build Status](https://secure.travis-ci.org/davidwood/node-multipass.png)](http://travis-ci.org/davidwood/node-multipass)
 
 [Tender](http://tenderapp.com) provides a mechanism for single sign-on known as Multipass.  Multipass uses an AES encrypted JSON hash and node-multipass provides functions for encoding and decoding these tokens.
 
